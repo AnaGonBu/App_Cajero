@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<title>Operation option</title>
+</head>
+<body style='font-family: Arial, sans-serif;background-color:#a1d2df;'>
+<div style='background-color:rgb(255 255 255 / 59%);width: 50%;height:400px;margin-left:20%;box-shadow: 1px 3px 6px #1e2659;'>
+	<div style='margin: 0 auto;margin-top:10%;padding:12px'>
+   		<h1>Operaciones</h1>
+        <p><strong>Cuenta:</strong> <span th:text="${session.cuenta.idCuenta}"></span></p>
+	</div>
+<div style='margin-bottom:10%;'>
+	<form class="mb-3" th:action="@{/acceso}" method="post" style='width:40%; margin-left:27%;margin-bottom:10%;' >
+ 	<div class="mb-3">
+		<ul class="list-group" style='margin-bottom:10%;box-shadow: 1px 3px 6px #1e2659;'><!-- https://getbootstrap.com/docs/5.3/components/list-group/ -->
+  			<li class="input-group-text" ><a th:href="@{/acceso/ingresar}"style='color:black; font-size:20px;'>Ingresar</a></li>
+  			<li class="input-group-text" ><a th:href="@{/acceso/extraer}"style='color:black;font-size:20px;'>Extraer</a></li>
+  			<li class="input-group-text"><a th:href="@{/acceso/transferencia}"style='color:black;font-size:20px;'>Transferencia</a></li>
+  			<li class="input-group-text"><a th:href="@{/acceso/resume}"style='color:black;font-size:20px;'>Ver Movimientos</a></li>
+  			<li class="input-group-text"  ><a th:href="@{/acceso/logout}"style='color:black;font-size:20px;'>Cerrar Sesión</a></li>
+		</ul>
+	</div>
+	</form>
+	<div style='margin-left:10%;' >
+		<strong><span th:text= "${mensaje}"style='color:black;' ></span></strong>
+		<strong><span th:text= "${session.mensaje}"style='color:black;' ></span></strong> 
+	</div>
+</div>
+</div>  
+</body>
+</html>
